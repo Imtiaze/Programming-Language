@@ -1,4 +1,4 @@
-package com.roze.oop.bike;
+package com.roze.oop.abstraction.bike;
 
 /**
  *
