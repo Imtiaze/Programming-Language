@@ -7,36 +7,39 @@
 
 abstract class Dumper
 {
-	abstract public function dump($data);
+    abstract public function dump($data);
 }
 
 class WebDumper extends Dumper
 {
-	public function dump($data)
-	{
-		echo '<pre>';
-		var_dump($data);
-		echo '</pre>';
-	}
+    public function dump($data)
+    {
+        echo "<pre>";
+        var_dump('Web Dumper : ' .$data);
+        echo '</pre>';
+    }
 }
 
 class ConsoleDumper extends Dumper
 {
-	public function dump($data)
-	{
-		var_dump($data);
-	}
+    public function dump($data)
+    {
+        echo "<pre>";
+        var_dump('Console Dumper: ' . $data);
+        echo '</pre>';
+    }
 }
 
-class DumperFactory
+class DumperFactory 
 {
-	public static function getDumper()
-	{
-		return PHP_SAPI === 'cli'
-			? new ConsoleDumper()
-			: new WebDumper();
-	}
+    public static function getDumper()
+    {
+        return PHP_SAPI == 'cli' ? new ConsoleDumper : new WebDumper;
+    }
 }
+
+
 
 $dumper = DumperFactory::getDumper();
-$dumper->dump('PHP abstract class is awesome!');
+
+$dumper->dump('PHP abstract class is awesome');
