@@ -1,2 +1,3 @@
-Start working with inheritance. 
-asdfasdf
+Start working with abstraction. 
+abstraction with interface
+
