@@ -8,38 +8,39 @@ import java.util.Map;
  */
 public class Employee implements Cloneable {
 
-    private int id;
-    private String name;
+   private int id;
 
-    private Map<String, String> props;
+	private String name;
 
-    public int getId() {
-        return id;
-    }
+	private Map<String, String> props;
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public Map<String, String> getProps() {
-        return props;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setProps(Map<String, String> props) {
-        this.props = props;
-    }
+	public Map<String, String> getProps() {
+		return props;
+	}
 
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
-    }
+	public void setProps(Map<String, String> p) {
+		this.props = p;
+	}
+
+	 @Override
+	 public Object clone() throws CloneNotSupportedException {
+	 return super.clone();
+	 }
 
 }

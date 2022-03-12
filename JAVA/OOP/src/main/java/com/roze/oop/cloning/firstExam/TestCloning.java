@@ -12,25 +12,28 @@ public class TestCloning {
     public static void main(String[] args) throws CloneNotSupportedException {
 
         Employee emp = new Employee();
+
         emp.setId(1);
         emp.setName("Firoze");
-
         Map<String, String> props = new HashMap<>();
+        props.put("salary", "100000");
+        props.put("city", "Dhaka");
+        emp.setProps(props);
 
-        props.put("Salary", "100000");
-        props.put("City", "Dhaka");
+        Employee clonedEmp = (Employee) emp.clone();
 
-        Employee cloneEmployee = (Employee) emp.clone();
-        System.out.println("emp and clonedEmployee == test : " + (emp == cloneEmployee));
+        System.out.println("emp and clonedEmp == test: " + (emp == clonedEmp));
 
-        System.out.println("emp and clonedEmployee HsahMap == test : " + (emp.getProps() == cloneEmployee.getProps()));
+        System.out.println("emp and clonedEmp HashMap == test: " + (emp.getProps() == clonedEmp.getProps()));
 
-        emp.getProps().put("Title", "CEO");
-        emp.getProps().put("City", "Rajshahi");
+       
+        emp.getProps().put("title", "CEO");
+        emp.getProps().put("city", "Rajshahi");
+        System.out.println("clonedEmp props:" + clonedEmp.getProps());
 
-        System.out.println("clonedEmp props: " + cloneEmployee.getProps());
+       
         emp.setName("new");
-        System.out.println("clonedEmp name: " + cloneEmployee.getName());
+        System.out.println("clonedEmp name:" + clonedEmp.getName());
 
     }
 
