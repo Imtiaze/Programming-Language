@@ -12,6 +12,6 @@ public class Subject {
         list[0] = "Java";
         list[1] = "Data Structure and Algorithm";
         list[2] = "C Programming";
-        list[3] = "optionalSubject";
+        list[3] = optionalSubject;
     }
 }

@@ -14,6 +14,7 @@ public class TestShallowCopy {
         Student stuObj2 = null;
 
         try {
+
             stuObj2 = (Student) stuObj1.clone();
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
